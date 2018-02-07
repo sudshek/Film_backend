@@ -11,9 +11,10 @@ app.use(cors());
 // var ProductApi = require('./routes/ProductUploadApi.js')
 // var FetchApi = require('./routes/FetchProductApi.js')
 // var CartApi = require('./routes/CartApi.js')
-// var SearchApi = require('./routes/SearchApi.js')
-
 var UserApi = require('./routes/UserApi.js')
+ var StakeholderApi = require('./routes/StakeholderApi.js')
+
+
 app.use(BodyParser.urlencoded({ extended: true }));
 app.use(BodyParser.json());
 app.use(fileupload());
@@ -26,10 +27,8 @@ var io = require('socket.io').listen(server);
 // app.use(express.static('public'));
 // app.use('/fetch', FetchApi);
 // app.use('/cart', CartApi);
-// app.use('/search', SearchApi);
-
 app.use('/user', UserApi);
-
+app.use('/stakeholder', StakeholderApi);
 
 var uri = 'mongodb://keshav:keshav@ds119355.mlab.com:19355/exchanger';
 mongoose.connect(uri, function (err) {
