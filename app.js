@@ -10,7 +10,7 @@ app.use(cors());
 //var LoginApi = require('./routes/LoginApi.js')
 // var ProductApi = require('./routes/ProductUploadApi.js')
 // var FetchApi = require('./routes/FetchProductApi.js')
-// var CartApi = require('./routes/CartApi.js')
+ var FormApi = require('./routes/FormApi.js')
 var UserApi = require('./routes/UserApi.js')
  var StakeholderApi = require('./routes/StakeholderApi.js')
 
@@ -26,7 +26,7 @@ var io = require('socket.io').listen(server);
 // app.use('/product',ProductApi);
 // app.use(express.static('public'));
 // app.use('/fetch', FetchApi);
-// app.use('/cart', CartApi);
+app.use('/form', FormApi);
 app.use('/user', UserApi);
 app.use('/stakeholder', StakeholderApi);
 
